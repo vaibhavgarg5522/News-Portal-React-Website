@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './NewsApp.css'
 import Card from '../card/Card'
 const NewsApp = () => {
 const [search,setSearch]=useState("india")
+const [news, setNews]=useState([])
 
 const Api_key = "3394a84ff03740b89f06928aae21ac5e"
 
 const getApi = async() => {
-  const response = await fetch(`https://newsapi.org/v2/everything?q=tesla&apiKey=${Api_key}`)
-  const jsonData = response.json()
+  const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${Api_key}`)
+  const jsonData = await response.json()
     console.log(jsonData)
+    setNews(jsonData.articles)
 }
-// const handleChange =(e)=>{
-//   setSearch(e.target.value)
-// }
+   const handleinput =(event)=>{
+    setSearch(event.target.value)
+   }
+
+ useEffect(()=>{
+       getApi()
+  },[])
 
   return (
     <div className='newsapp-container'>
@@ -26,7 +32,7 @@ const getApi = async() => {
           <a>Trending</a>
         </ul>
         <div className='searchbar'>
-          <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search News' />
+          <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search News' value={search} />
           <button onClick={getApi}>Search</button>
         </div>
       </nav>
@@ -34,14 +40,14 @@ const getApi = async() => {
         <p className='para'>Stay Update With Trending News</p>
       </div>
       <div className='category-button'>
-        <button>Sports</button>
-        <button>Politics</button>
-        <button>Entertainment</button>
-        <button>Health</button>
-        <button>Fitness</button>
+        <button onChange={handleinput} value="Sports">Sports</button>
+        <button onChange={handleinput} value="Politics">Politics</button>
+        <button onChange={handleinput} value="Entertainment">Entertainment</button>
+        <button onChange={handleinput} value="Health">Health</button>
+        <button onChange={handleinput} value="Fitness">Fitness</button>
       </div>
       <div>
-        <Card></Card>
+        {news?<Card news={news}></Card>:[]}
       </div>
     </div>
   )
