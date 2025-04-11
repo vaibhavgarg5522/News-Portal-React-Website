@@ -1,8 +1,42 @@
-# React + Vite
+# 📰 News Portal React Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and dynamic **News Portal** built with **ReactJS**, fetching and displaying the latest news headlines using real-time API integration.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** *Coming Soon*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🚀 Features
+
+- 🗞️ Live news fetching using public API
+- 🧭 Category-wise news filtering
+- 🌐 Responsive and mobile-friendly layout
+- ⚡ Fast loading with clean UI/UX
+- 🕹️ Interactive cards for each news article
+- 🔎 Search functionality (if added)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** ReactJS, JavaScript, CSS
+- **API:** NewsAPI or similar (replace with actual one if different)
+- **State Management:** React Hooks
+- **Deployment:** Vercel
+
+---
+
+## 📁 Folder Structure
+
+```bash
+News-Portal-React-Website/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   └── index.js
+├── .gitignore
+├── README.md
+├── package.json
+└── styles/
