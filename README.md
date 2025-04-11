@@ -5,6 +5,7 @@ A responsive and dynamic **News Portal** built with **ReactJS**, fetching and di
 🔗 **Live Demo:** *Coming Soon*
 
 ---
+![Screenshot (7)](https://github.com/user-attachments/assets/f983706a-2d47-450a-9136-ee237d226e42)
 
 ## 🚀 Features
 
